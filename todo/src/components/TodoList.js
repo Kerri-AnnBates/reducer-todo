@@ -1,6 +1,7 @@
-import React, {useState, useReducer} from 'react';
+import React, { useReducer} from 'react';
 import {initialValue, reducer} from '../reducers/todoReducer';
 import Todo from './Todo';
+import AddForm from './AddForm';
 
 const TodoList = () => {
     const [state, dispatch] = useReducer(reducer, initialValue);
@@ -11,6 +12,7 @@ const TodoList = () => {
             {state.map(item => (
                 <Todo key={item.id} todo={item} />
             ))}
+            <AddForm />
         </div>
     )
 }

@@ -7,10 +7,20 @@ export const initialValue = [
         id: 1
     }, 
     {
-        title: 'Eat something',
+        title: 'Cook dinner',
         completed: false,
         id: 2
-    }
+    },
+    {
+        title: 'Wash car',
+        completed: false,
+        id: 3
+    },
+    {
+        title: 'Give Yoshi a bath',
+        completed: false,
+        id: 4
+    },
 ]
 
 export const reducer = (state) => {
