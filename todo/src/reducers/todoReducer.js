@@ -23,6 +23,11 @@ export const initialValue = [
     },
 ]
 
-export const reducer = (state) => {
-    return {...state, todo: 'new todo'}
+export const reducer = (state, action) => {
+    switch(action.type) {
+        case 'ADD_ITEM':
+        return [...state, action.payload]
+        // case 'TOGGLE_ITEM':
+        //     return 
+    }
 }

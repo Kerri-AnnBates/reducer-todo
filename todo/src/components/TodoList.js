@@ -5,6 +5,7 @@ import AddForm from './AddForm';
 
 const TodoList = () => {
     const [state, dispatch] = useReducer(reducer, initialValue);
+    
     console.log(state)
 
     return (
@@ -12,7 +13,7 @@ const TodoList = () => {
             {state.map(item => (
                 <Todo key={item.id} todo={item} />
             ))}
-            <AddForm />
+            <AddForm dispatch={dispatch} />
         </div>
     )
 }
