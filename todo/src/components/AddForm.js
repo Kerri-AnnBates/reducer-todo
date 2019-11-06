@@ -17,7 +17,7 @@ const AddForm = (props) => {
             id: Date.now()
         }
         dispatch({type: 'ADD_ITEM', payload: newTodo});
-        console.log("submited: ", value);
+        // console.log("submited: ", value);
     }
     return (
         <>

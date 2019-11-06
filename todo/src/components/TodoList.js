@@ -8,12 +8,22 @@ const TodoList = () => {
     
     console.log(state)
 
+    const handleToggle = (id) => {
+        // console.log('toggled.', id);
+       dispatch({type: 'TOGGLE_ITEM', payload: id});
+    }
+
     return (
         <div>
             {state.map(item => (
-                <Todo key={item.id} todo={item} />
+                <Todo 
+                    key={item.id} 
+                    todo={item} 
+                    handleToggle={handleToggle} 
+                />
             ))}
             <AddForm dispatch={dispatch} />
+            <button>Clear Completed</button>
         </div>
     )
 }

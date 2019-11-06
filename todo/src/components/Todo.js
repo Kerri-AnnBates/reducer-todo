@@ -1,14 +1,11 @@
 import React from 'react';
+import '../App.css';
 
 const Todo = (props) => {
-    const {todo} = props;
-
-    const handleToggle = () => {
-        console.log('toggled.');
-    }
+    const { todo, handleToggle} = props;
 
     return (
-        <div onClick={handleToggle} className={todo.completed ? 'completed' : ''}>{todo.title}</div>
+        <div onClick={() => handleToggle(todo.id)} className={todo.completed ? 'completed' : ''}>{todo.title}</div>
     )
 }
 

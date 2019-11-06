@@ -26,8 +26,14 @@ export const initialValue = [
 export const reducer = (state, action) => {
     switch(action.type) {
         case 'ADD_ITEM':
-        return [...state, action.payload]
-        // case 'TOGGLE_ITEM':
-        //     return 
+            return [...state, action.payload]
+        case 'TOGGLE_ITEM':
+            return state.map(todo => {
+                if (todo.id === action.payload) {
+                    return {...todo, completed: !todo.completed}
+                } else {
+                    return todo
+                }
+            })
     }
 }
