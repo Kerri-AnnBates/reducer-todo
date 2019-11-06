@@ -34,7 +34,10 @@ const AddForm = (props) => {
             completed: false,
             id: Date.now()
         }
-        dispatch({type: 'ADD_ITEM', payload: newTodo});
+        if(value !== '') {
+            dispatch({type: 'ADD_ITEM', payload: newTodo});
+            setValue('');
+        }
         // console.log("submited: ", value);
     }
     return (
