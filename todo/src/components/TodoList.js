@@ -13,6 +13,11 @@ const TodoList = () => {
        dispatch({type: 'TOGGLE_ITEM', payload: id});
     }
 
+    const handleClear = () => {
+        console.log('clicked');
+        dispatch({type: 'CLEAR_COMPLETED'});
+    }
+
     return (
         <div>
             {state.map(item => (
@@ -23,7 +28,7 @@ const TodoList = () => {
                 />
             ))}
             <AddForm dispatch={dispatch} />
-            <button>Clear Completed</button>
+            <button onClick={handleClear}>Clear Completed</button>
         </div>
     )
 }
